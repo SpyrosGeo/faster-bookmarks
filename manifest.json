@@ -1,0 +1,29 @@
+{
+  "manifest_version": 2,
+  "name": "FasterBookmarks",
+  "version": "1.0",
+  "description": "A 'faster' way to access your bookmarks",
+  "permissions": [
+    "activeTab",
+    "bookmarks"
+  ],
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  },
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "background":{
+    "scripts":["background.js"]
+    "persistent":false;
+  }
+}
